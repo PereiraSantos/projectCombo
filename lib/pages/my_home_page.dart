@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_combo/border_radius/pages/build_body.dart';
-import 'package:project_combo/converte_binario_para_numero/pages/home_age.dart';
+import 'package:project_combo/converte_binario_para_numero/pages/home_page.dart';
+import 'package:project_combo/pages/components/panel_card.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -8,31 +9,22 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("teste")),
-      body: Column(
-        children: [
-          Container(
-            child: ElevatedButton(onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HomePage()),
-              );
-            }, child: Text("Converte Binario"),
+      appBar: AppBar(title: Text("Combo de projeto")),
+      body:  SingleChildScrollView(
+        child: Align(
+          alignment: Alignment.center,
+          child: Wrap(
+            children:  [
 
-            ),
-          ),
-          Container(
-            child: ElevatedButton(onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => BuildBody()),
-              );
-            }, child: Text("Border Radius"),
+              PanelCard(title: "Converte Binario", rote: HomePage()),
 
-            ),
+              PanelCard(title: "Border Radius", rote: BuildBody()),
+
+
+            ],
           ),
-        ],
-      ),
+        ),
+      )
     );
   }
 }
