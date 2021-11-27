@@ -16,9 +16,9 @@ class MyHomePage extends StatelessWidget {
           child: Wrap(
             children:  [
 
-              PanelCard(title: "Converte Binario", rote: HomePage()),
+              PanelCard(title: "Converte Binario", rote: HomePage(), image: "assets/binario.png"),
 
-              PanelCard(title: "Border Radius", rote: BuildBody()),
+              PanelCard(title: "Border Radius", rote: BuildBody(), image: "assets/borda.png",),
 
 
             ],
