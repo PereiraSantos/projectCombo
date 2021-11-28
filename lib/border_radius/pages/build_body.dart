@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:project_combo/border_radius/controller/store.dart';
+import 'package:project_combo/border_radius/pages/indication.dart';
 import 'package:project_combo/border_radius/pages/customize_slider.dart';
 
 class BuildBody extends StatelessWidget{
@@ -35,23 +36,36 @@ class BuildBody extends StatelessWidget{
                       width: 150,
                       height: 150,
                       color: Colors.blueAccent,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Visibility(
+                            visible: store.indicationTopRight,
+                              child: Indication(iconParam: Icons.north_east_outlined)
+                          ),
+                          Visibility(
+                              visible: store.indicationBottomRight,
+                              child: Indication(iconParam: Icons.south_east_outlined)
+                          ),
+                          Visibility(
+                              visible: store.indicationBottomLeft,
+                              child: Indication(iconParam: Icons.call_received_outlined)
+                          ),
+                          Visibility(
+                              visible: store.indicationTopLeft,
+                              child: Indication(iconParam: Icons.north_west_outlined)
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
 
-                const Padding(padding: EdgeInsets.only(top: 10)),
-
                 CustomizeSlider(value: store.valueTopLeft, onChanged: (double value) => store.modifiesTopLeft(value)),
-
-                const Padding(padding: EdgeInsets.only(top: 10)),
 
                 CustomizeSlider(value: store.valueTopRight, onChanged: (double value) => store.modifiesTopRight(value)),
 
-                const Padding(padding: EdgeInsets.only(top: 10)),
-
                 CustomizeSlider(value: store.valueBottomLeft, onChanged: (double value) => store.modifiesBottomLeft(value)),
-
-                const Padding(padding: EdgeInsets.only(top: 10)),
 
                 CustomizeSlider(value: store.valueBottomRight, onChanged: (double value) => store.modifiesBottomRight(value)),
 
