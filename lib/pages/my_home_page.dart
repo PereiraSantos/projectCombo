@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_combo/border_radius/pages/build_body.dart';
+import 'package:project_combo/calculator/pages/calculator_page.dart';
 import 'package:project_combo/converte_binario_para_numero/pages/home_page.dart';
 import 'package:project_combo/pages/components/panel_card.dart';
 
@@ -18,7 +19,9 @@ class MyHomePage extends StatelessWidget {
 
               PanelCard(title: "Converte Binario", rote: HomePage(), image: "assets/binario.png"),
 
-              PanelCard(title: "Border Radius", rote: BuildBody(), image: "assets/borda.png",),
+              PanelCard(title: "Border Radius", rote: BuildBody(), image: "assets/borda.png"),
+
+              PanelCard(title: "Calculadora", rote: CalculationPage(), image: "assets/calculator.png"),
 
 
             ],
