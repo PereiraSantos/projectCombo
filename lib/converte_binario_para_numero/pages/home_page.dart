@@ -24,6 +24,29 @@ class HomePage extends StatelessWidget {
 
               const Padding(padding: EdgeInsets.only(top:10)),
 
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: RichText(
+                    text: const TextSpan(
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.black,
+                      ),
+                      children:  <TextSpan>[
+                        TextSpan(text: 'Apenas', style: TextStyle(fontWeight: FontWeight.normal, color: Colors.black54)),
+                        TextSpan(text: ' 0', style: TextStyle(fontWeight: FontWeight.bold)),
+                        TextSpan(text: ' e', style: TextStyle(fontWeight: FontWeight.normal, color: Colors.black54)),
+                        TextSpan(text: ' 1', style: TextStyle(fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              const Padding(padding: EdgeInsets.only(top:10)),
+
               InputInformation(binary: binary, store: store),
 
               const  Padding(padding: EdgeInsets.only(top:10)),

@@ -25,7 +25,7 @@ class InputInformation extends StatelessWidget {
             label: Text("Binario", style: TextStyle(fontSize: 20, color: Colors.grey)),
           border: OutlineInputBorder(borderSide: BorderSide(color: Colors.green, style:  BorderStyle.solid, width: 1))
         ),
-        onChanged: (value) => store.concatenate(value),
+        onChanged: (value) => store.concatenate(value)
       ),
     );
   }
