@@ -1,48 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:project_combo/calculator/controller/store_calculator.dart';
+import 'package:project_combo/calculator/pages/components/row_card.dart';
+import 'package:project_combo/calculator/pages/components/text_calculator.dart';
+import 'package:project_combo/calculator/src/custom_decoration.dart';
 
 //ignore: must_be_immutable
 class CardCalculator extends StatelessWidget {
 
-  CardCalculator({Key? key}) : super(key: key);
+  StoreCalculator storeCalculator = StoreCalculator();
 
-  BoxDecoration customDecoration =  BoxDecoration(
-    color: Colors.white,
-    borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(10),
-        topRight: Radius.circular(10),
-        bottomLeft: Radius.circular(10),
-        bottomRight: Radius.circular(10)
-    ),
-    boxShadow: [
-      BoxShadow(
-        color: Colors.grey.withOpacity(0.5),
-        spreadRadius: 5,
-        blurRadius: 7,
-        offset: const Offset(0, 3), // changes position of shadow
-      ),
-    ],
-  );
+  CardCalculator({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20.0,top: 10.0, right: 20.0),
       child: Container(
-        height: 400,
-        decoration: customDecoration,
+        decoration: CustomDecoration.decoration(),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
-              child: Container(
-                height: 40,
-                decoration: customDecoration,
-              ),
-            )
+
+            TextCalculator(storeCalculator: storeCalculator),
+
+            //RowCard(titleBottomLeft: "MC", titleBottomLeftCenter: "MR", titleBottomRightCenter: "M−", titleBottomRight: "M+", storeCalculator: storeCalculator),
+
+            //RowCard(titleBottomLeft: "C", titleBottomLeftCenter: "±", titleBottomRightCenter: "%", titleBottomRight: "√", storeCalculator: storeCalculator),
+
+            RowCard(titleBottomLeft: "7", titleBottomLeftCenter: "8", titleBottomRightCenter: "9", titleBottomRight: "÷", storeCalculator: storeCalculator),
+
+            RowCard(titleBottomLeft: "4", titleBottomLeftCenter: "5", titleBottomRightCenter: "6", titleBottomRight: "×", storeCalculator: storeCalculator),
+
+            RowCard(titleBottomLeft: "1", titleBottomLeftCenter: "2", titleBottomRightCenter: "3", titleBottomRight: "-", storeCalculator: storeCalculator),
+
+            RowCard(titleBottomLeft: "0", titleBottomLeftCenter: "C"/*"."*/, titleBottomRightCenter: "=", titleBottomRight: "+", storeCalculator: storeCalculator),
+
+            const Padding(padding: EdgeInsets.only(top: 10.0)),
+
           ],
         ),
       ),
     );
   }
 }
+
+
 
